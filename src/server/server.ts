@@ -5,6 +5,7 @@ import setupRoutes from '../controllers';
 import options from '../config/cors';
 import errorHandler from '../middlewares/errors';
 
+// TODO: Convert to class
 const app: Express = express();
 
 const port: string = process.env.PORT || '3000';
