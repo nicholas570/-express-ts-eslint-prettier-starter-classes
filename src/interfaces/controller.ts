@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
-interface IController {
+interface Controller {
   path: string;
   router: Router;
 }
 
-export default IController;
+export default Controller;

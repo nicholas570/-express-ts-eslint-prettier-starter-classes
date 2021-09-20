@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import IController from '../interfaces/controller';
-import TestController from './testController';
+import Controller from '../interfaces/Controller';
+import TestController from './TestController';
 
-class MainController implements IController {
+class MainController implements Controller {
   public path = '/api';
   public router = Router();
 

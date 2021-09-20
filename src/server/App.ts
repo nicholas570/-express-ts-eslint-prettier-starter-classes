@@ -1,8 +1,8 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import options from '../config/cors';
-import errorHandler from '../middlewares/errors';
-import MainController from '../controllers';
+import errorHandler from '../middlewares/errorsMiddleware';
+import ApiController from '../controllers/ApiController';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -39,8 +39,8 @@ class App {
   }
 
   private initializeControllers(): void {
-    const mainController = new MainController();
-    this.app.use('/', mainController.router);
+    const apiController = new ApiController();
+    this.app.use('/', apiController.router);
   }
 
   private connectToTheDatabase(): void {

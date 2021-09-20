@@ -1,7 +1,7 @@
-import IUser from '../models/UserModel';
+import User from '../models/UserModel';
 
-interface IService {
-  getAll: () => Promise<IUser[]>;
+interface Service {
+  getAll: () => Promise<User[]>;
 }
 
-export default IService;
+export default Service;

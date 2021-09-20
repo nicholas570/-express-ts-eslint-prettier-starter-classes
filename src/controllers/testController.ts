@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import IController from '../interfaces/controller';
-import IUser from '../models/UserModel';
+import Controller from '../interfaces/Controller';
+import User from '../models/UserModel';
 import TestService from '../services/testService';
 
-class TestController implements IController {
+class TestController implements Controller {
   public path = '/test';
   public router = Router();
   public service = new TestService();
@@ -16,7 +16,7 @@ class TestController implements IController {
     this.router.get(`${this.path}`, this.getAll);
   }
 
-  private async getAll(req: Request, res: Response, next: NextFunction): Promise<Response<IUser[]> | undefined> {
+  private async getAll(req: Request, res: Response, next: NextFunction): Promise<Response<User[]> | undefined> {
     try {
       const testService = new TestService();
       const results = await testService.getAll();
