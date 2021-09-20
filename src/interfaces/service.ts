@@ -1,4 +1,4 @@
-import IUser from '../models/model';
+import IUser from '../models/UserModel';
 
 interface IService {
   getAll: () => Promise<IUser[]>;

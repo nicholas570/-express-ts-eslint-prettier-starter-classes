@@ -3,6 +3,9 @@ import cors from 'cors';
 import options from '../config/cors';
 import errorHandler from '../middlewares/errors';
 import MainController from '../controllers';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 class App {
   public app: Application;

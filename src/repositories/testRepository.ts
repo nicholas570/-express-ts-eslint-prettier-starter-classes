@@ -1,5 +1,6 @@
 import IRepository from '../interfaces/repository';
-import IUser from '../models/model';
+import IUser from '../models/UserModel';
+
 class TestRepository implements IRepository {
   public async getAll(): Promise<IUser[]> {
     // db query

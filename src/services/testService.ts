@@ -1,6 +1,7 @@
-import IUser from '../models/model';
+import IUser from '../models/UserModel';
 import IService from '../interfaces/service';
 import TestRepository from '../repositories/testRepository';
+
 class TestService implements IService {
   public async getAll(): Promise<IUser[]> {
     const testRepository = new TestRepository();

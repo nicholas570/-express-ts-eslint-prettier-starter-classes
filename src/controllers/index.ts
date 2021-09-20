@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import IController from '../interfaces/controller';
 import TestController from './testController';
+
 class MainController implements IController {
   public path = '/api';
   public router = Router();

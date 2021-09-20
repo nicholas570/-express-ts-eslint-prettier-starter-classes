@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import IController from '../interfaces/controller';
-import IUser from '../models/model';
+import IUser from '../models/UserModel';
 import TestService from '../services/testService';
 
 class TestController implements IController {
