@@ -1,15 +1,29 @@
-import express, { Router, Request, Response, NextFunction } from 'express';
-import testService from '../services/testService';
+import { Router, Request, Response, NextFunction } from 'express';
+import IController from '../interfaces/controller';
+import TestService from '../services/testService';
 
-const testController: Router = express.Router();
+class TestController implements IController {
+  public path = '/test';
+  public router = Router();
+  public service = new TestService();
 
-testController.get('/', async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const results = await testService.getAll();
-    return res.status(200).json(results);
-  } catch (error) {
-    next(error);
+  constructor() {
+    this.initializeRoutes();
   }
-});
 
-export default testController;
+  private initializeRoutes(): void {
+    this.router.get(`${this.path}`, this.getAll);
+  }
+
+  private async getAll(req: Request, res: Response, next: NextFunction): Promise<any> {
+    try {
+      const testService = new TestService();
+      const results = await testService.getAll();
+      return res.status(200).json(results);
+    } catch (error) {
+      next(error);
+    }
+  }
+}
+
+export default TestController;

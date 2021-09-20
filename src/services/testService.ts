@@ -1,10 +1,11 @@
-import testRepository from '../repositories/testRepository';
-
-const testService = {
-  getAll: async () => {
+import IService from '../interfaces/service';
+import TestRepository from '../repositories/testRepository';
+class TestService implements IService {
+  public async getAll(): Promise<any> {
+    const testRepository = new TestRepository();
     const results = await testRepository.getAll();
     return results;
-  },
-};
+  }
+}
 
-export default testService;
+export default TestService;

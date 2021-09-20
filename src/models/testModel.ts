@@ -1,5 +1,9 @@
-const testModel = {
-  getAll: async () => 'Hello from the model',
-};
+import ITestModel from '../interfaces/model';
 
-export default testModel;
+class TestModel implements ITestModel {
+  public async getAll(): Promise<string> {
+    return 'Hello from the model';
+  }
+}
+
+export default TestModel;

@@ -1,3 +1,5 @@
-import runServer from './server/server';
+import App from './server/App';
 
-runServer();
+const app = new App();
+
+app.listen();

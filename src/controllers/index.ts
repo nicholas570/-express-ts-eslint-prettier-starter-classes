@@ -1,12 +1,18 @@
-import express, { Router, Request, Response, Express } from 'express';
-import testController from './testController';
+import { Router } from 'express';
+import IController from '../interfaces/controller';
+import TestController from './testController';
+class MainController implements IController {
+  public path = '/api';
+  public router = Router();
 
-const router: Router = express.Router();
+  constructor() {
+    this.initializeRoutes();
+  }
 
-router.use('/test', testController);
+  private initializeRoutes(): void {
+    const testController = new TestController();
+    this.router.use(`${this.path}`, testController.router);
+  }
+}
 
-const setupRoutes = (app: Express) => {
-  app.use('/api', router);
-};
-
-export default setupRoutes;
+export default MainController;
