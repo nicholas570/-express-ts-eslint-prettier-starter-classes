@@ -24,7 +24,7 @@
 
 ## About The Project
 
-This application is an Express starter, configured with TypeScript/Eslint/Prettier and the MVC architecture
+This application is an Express starter, configured with TypeScript/Eslint/Prettier, a precommit hook and the MVC architecture
 
 ### Built With
 
