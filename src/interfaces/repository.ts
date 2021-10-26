@@ -1,5 +1,5 @@
-interface IRepository {
+interface Repository {
   getAll: () => Promise<any>;
 }
 
-export default IRepository;
+export default Repository;
