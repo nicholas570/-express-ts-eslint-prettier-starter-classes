@@ -1,6 +1,6 @@
 import User from '../models/UserModel';
 import IService from '../interfaces/Service';
-import TestRepository from '../repositories/testRepository';
+import TestRepository from '../repositories/TestRepository';
 
 class TestService implements IService {
   public async getAll(): Promise<User[]> {

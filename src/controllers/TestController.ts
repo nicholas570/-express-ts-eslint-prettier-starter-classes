@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import Controller from '../interfaces/Controller';
 import User from '../models/UserModel';
-import TestService from '../services/testService';
+import TestService from '../services/TestService';
 
 class TestController implements Controller {
   public path = '/test';
